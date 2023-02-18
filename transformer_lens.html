@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="easy_transformer package" href="easy_transformer.html" /><link rel="prev" title="Citation" href="content/citation.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Local Development" href="content/development.html" /><link rel="prev" title="Citation" href="content/citation.html" />
 
     <!-- Generated with Sphinx 5.2.3 and Furo 2022.12.07 -->
         <title>transformer_lens package - TransformerLens Documentation</title>
@@ -167,7 +167,6 @@
 <p class="caption" role="heading"><span class="caption-text">Code</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">transformer_lens package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="easy_transformer.html">easy_transformer package</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -2813,25 +2812,26 @@ an HookedTransformer model.
 :type momentum: float
 :param max_grad_norm: Maximum gradient norm to use for
 :type max_grad_norm: float, <em>optional</em>
-:param weight_decay: Weight decay to use for training</p>
-<blockquote>
-<div><p>training</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>optimizer_name</strong> (<em>str</em>) – The name of the optimizer to use</p></li>
-<li><p><strong>device</strong> (str, <em>optional</em>) – Device to use for training</p></li>
-<li><p><strong>warmup_steps</strong> (int, <em>optional</em>) – Number of warmup steps to use for training</p></li>
-<li><p><strong>save_every</strong> (int, <em>optional</em>) – After how many batches should a checkpoint be saved</p></li>
-<li><p><strong>save_dir</strong><strong>,</strong> (str, <em>optional</em>) – Where to save checkpoints</p></li>
-<li><p><strong>wandb</strong> (<em>bool</em>) – Whether to use Weights and Biases for logging</p></li>
-<li><p><strong>wandb_project</strong> (str, <em>optional</em>) – Name of the Weights and Biases project to use</p></li>
-<li><p><strong>print_every</strong> (int, <em>optional</em>) – Print the loss every n steps</p></li>
-<li><p><strong>max_steps</strong> (int, <em>optional</em>) – Terminate the epoch after this many steps. Used for debugging.</p></li>
-</ul>
-</dd>
-</dl>
+:param weight_decay: Weight decay to use for training
+:type weight_decay: float, <em>optional</em>
+:param optimizer_name: The name of the optimizer to use
+:type optimizer_name: str
+:param device: Device to use for training
+:type device: str, <em>optional</em>
+:param warmup_steps: Number of warmup steps to use for training
+:type warmup_steps: int, <em>optional</em>
+:param save_every: After how many batches should a checkpoint be saved
+:type save_every: int, <em>optional</em>
+:param save_dir,: Where to save checkpoints
+:type save_dir,: str, <em>optional</em>
+:param wandb: Whether to use Weights and Biases for logging
+:type wandb: bool
+:param wandb_project: Name of the Weights and Biases project to use
+:type wandb_project: str, <em>optional</em>
+:param print_every: Print the loss every n steps
+:type print_every: int, <em>optional</em>
+:param max_steps: Terminate the epoch after this many steps. Used for debugging.
+:type max_steps: int, <em>optional</em></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="transformer_lens.train.HookedTransformerTrainConfig.batch_size">
 <span class="sig-name descname"><span class="pre">batch_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#transformer_lens.train.HookedTransformerTrainConfig.batch_size" title="Permalink to this definition">#</a></dt>
@@ -2920,10 +2920,7 @@ an HookedTransformer model.
 <dd><p>Trains an HookedTransformer model on an autoregressive language modeling task.
 :param model: The model to train
 :param config: The training configuration
-:param dataset: The dataset to train on - this function assumes the dataset is</p>
-<blockquote>
-<div><p>set up for autoregressive language modeling.</p>
-</div></blockquote>
+:param dataset: The dataset to train on - this function assumes the dataset is set up for autoregressive language modeling.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The trained model</p>
@@ -3140,12 +3137,12 @@ np.unique(np.array([sample_logits(logits, top_k=2).item() for i in range(1000)])
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="easy_transformer.html">
+          <a class="next-page" href="content/development.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">easy_transformer package</div>
+                <div class="title">Local Development</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
