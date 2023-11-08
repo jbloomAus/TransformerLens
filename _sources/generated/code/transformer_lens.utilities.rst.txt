@@ -1,0 +1,10 @@
+transformer\_lens.utilities
+===========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   transformer_lens.utilities.devices
