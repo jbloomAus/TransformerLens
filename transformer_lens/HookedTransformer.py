@@ -18,7 +18,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import tqdm.auto as tqdm
-from fancy_einsum import einsum
 from jaxtyping import Float, Int
 from packaging import version
 from transformers import AutoModelForCausalLM, AutoTokenizer, PreTrainedTokenizerBase
@@ -38,6 +37,9 @@ from transformer_lens.components import (
     Unembed,
 )
 from transformer_lens.FactoredMatrix import FactoredMatrix
+
+# from fancy_einsum import 
+from transformer_lens.fancy_opt_einsum import fancy_opt_einsum as einsum
 from transformer_lens.hook_points import HookedRootModule, HookPoint
 from transformer_lens.HookedTransformerConfig import HookedTransformerConfig
 from transformer_lens.loading_from_pretrained import NON_HF_HOSTED_MODEL_NAMES

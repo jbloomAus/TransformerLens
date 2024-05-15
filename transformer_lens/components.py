@@ -15,11 +15,13 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from better_abc import abstract_attribute
-from fancy_einsum import einsum
+
+# from fancy_einsum import einsum
 from jaxtyping import Float, Int
 from transformers.utils import is_bitsandbytes_available
 
 from transformer_lens.FactoredMatrix import FactoredMatrix
+from transformer_lens.fancy_opt_einsum import fancy_opt_einsum as einsum
 from transformer_lens.hook_points import HookPoint
 from transformer_lens.HookedTransformerConfig import HookedTransformerConfig
 from transformer_lens.past_key_value_caching import HookedTransformerKeyValueCacheEntry
